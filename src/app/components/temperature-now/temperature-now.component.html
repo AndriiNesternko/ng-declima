@@ -1,0 +1,60 @@
+<form #cityNameForm="ngForm" (ngSubmit)="onSumbmit(cityNameForm)">
+  <input type="text" placeholder="Your city" name="city" ngModel required />
+  <button type="submit" class="submit-btn"></button>
+</form>
+
+<div class="flex-container" *ngIf="!isError; else erroMessage">
+  <div class="temperature-now">
+    <img [src]="iconURL" class="image" />
+    <div class="city-wrapper">
+      <img class="geo" src="../assets/geo.svg" alt="geo-icon" />
+      <p class="city">{{ cityName | titlecase }}</p>
+    </div>
+    <div class="description">{{ weatherDescription | titlecase }}</div>
+
+    <div class="temperature-wrapper">
+      <h2 class="avg">{{ temperature | number : "1.0-0" }}</h2>
+      <div class="wrapper">
+        <h3 class="max">{{ maxTemperature | number : "1.0-0" }}°</h3>
+        <h3 class="min">{{ minTemperature | number : "1.0-0" }}°</h3>
+      </div>
+    </div>
+
+    <div class="statistics">
+      <div class="statistic-item">
+        <img class="icon" src="../../assets/wind.svg" />
+        <div class="text-content">
+          <h3 class="title">Windy</h3>
+          <p class="data">
+            {{ windSpeed | number : "1.0-1" }}<span> km/h</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="statistic-item">
+        <img class="icon" src="../../assets/humid.svg" />
+        <div class="text-content">
+          <h3 class="title">Humidity</h3>
+          <p class="data">{{ humidity }}<span> %</span></p>
+        </div>
+      </div>
+
+      <div class="statistic-item">
+        <img class="icon" src="../../assets/rain_chance.svg" />
+        <div class="text-content">
+          <h3 class="title">Cloudiness</h3>
+          <p class="data">{{ cloudiness | number : "1.0-0" }}<span> %</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <air-pollution [coord]="coord"></air-pollution>
+    <hourly-temperature [temperatureList]="hourlyTempList"></hourly-temperature>
+  </div>
+</div>
+
+<ng-template #erroMessage>
+  <h1 class="find-city">Type your city</h1>
+</ng-template>

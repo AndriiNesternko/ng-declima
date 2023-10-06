@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="card" *ngFor="let temp of temperatureList; let i = index">
+    <div class="hours">+ {{ (i + 1) * 3 }}:00</div>
+    <img [src]="temp.iconURL" />
+    <div class="temp-wrapper">
+      <p class="max">{{ temp.tMax | number : "1.0-0" }}°</p>
+      <p class="min">{{ temp.tMin | number : "1.0-0" }}°</p>
+    </div>
+  </div>
+</div>

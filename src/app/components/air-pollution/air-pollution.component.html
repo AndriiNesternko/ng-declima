@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="index-container">
+    <div class="title-wrapper">
+      <img src="../../../assets/leaf.svg" />
+      <h2 class="title">Air Pollution</h2>
+    </div>
+
+    <div class="index-wrapper">
+      <h3 class="index">{{ aqi }}</h3>
+      <h4 class="index-header">Air Quality Index</h4>
+
+      <div [ngSwitch]="aqi" class="quality">
+        <div *ngSwitchCase="1" style="color: greenyellow">Good</div>
+        <div *ngSwitchCase="2" style="color: greenyellow">Fair</div>
+        <div *ngSwitchCase="3" style="color: orange">Moderate</div>
+        <div *ngSwitchCase="4" style="color: red">Poor</div>
+        <div *ngSwitchCase="5" style="color: darkred">Very Poor</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <h4 class="data">{{ so2 }}</h4>
+      <h5 class="data-header">SO<sub>2</sub></h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="data">{{ no2 }}</h4>
+      <h5 class="data-header">NO<sub>2</sub></h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="data">{{ pm10 }}</h4>
+      <h5 class="data-header">PM<sub>10</sub></h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="data">{{ pm25 }}</h4>
+      <h5 class="data-header">PM<sub>2.5</sub></h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="data">{{ o3 | number : "1.0-1" }}</h4>
+      <h5 class="data-header">O<sub>3</sub></h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="data">{{ co | number : "1.0-1" }}</h4>
+      <h5 class="data-header">CO</h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="data">{{ nh3 }}</h4>
+      <h5 class="data-header">NH<sub>3</sub></h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="data">{{ no }}</h4>
+      <h5 class="data-header">NO</h5>
+    </div>
+  </div>
+</div>

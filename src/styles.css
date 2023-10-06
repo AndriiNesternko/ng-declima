@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+/* reset */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* variables */
+
+:root {
+  --main-color: #6d67d0;
+  --primary-color: #8e87fa;
+  --main-text-color: #c2bff4;
+  --secondary-text-color: #e7e6fb;
+  --tertiary-text-color: #dad8f7;
+  --white-color: #fff;
+  --green-color: #87ebcd;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: url(assets/Background.png) center/cover;
+  background-attachment: fixed;
+  background-color: var(--primary-color);
+}
