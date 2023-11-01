@@ -1,14 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 import { Coord, IAir } from 'src/app/interfaces/air';
-import { AirService } from 'src/app/services/air.service';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'air-pollution',
   templateUrl: './air-pollution.component.html',
   styleUrls: ['./air-pollution.component.css'],
 })
-export class AirPollutionComponent {
+export class AirPollutionComponent implements OnChanges {
   @Input() coord!: Coord;
 
   so2: number = 0;
@@ -21,9 +21,13 @@ export class AirPollutionComponent {
   no: number = 0;
   aqi: number = 0;
 
-  constructor(private airService: AirService) {}
+  constructor(private airService: WeatherService) {}
 
-  ngOnChanges(): void {
+  ngOnChanges() {
+    this.getAir();
+  }
+
+  getAir() {
     this.airService.getAir(this.coord).subscribe({
       next: (res: IAir) => {
         this.so2 = res.list[0].components.so2;

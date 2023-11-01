@@ -6,7 +6,18 @@ export interface IWeather {
   city: City;
 }
 
-export interface List {
+export interface Coord {
+  lat: number;
+  lon: number;
+}
+
+export interface HourlyTemp {
+  tMax: number;
+  tMin: number;
+  iconURL: string;
+}
+
+interface List {
   dt: number;
   main: Main;
   weather: Weather[];
@@ -18,7 +29,7 @@ export interface List {
   dt_txt: string;
 }
 
-export interface Main {
+interface Main {
   temp: number;
   feels_like: number;
   temp_min: number;
@@ -30,28 +41,28 @@ export interface Main {
   temp_kf: number;
 }
 
-export interface Weather {
+interface Weather {
   id: number;
   main: string;
   description: string;
   icon: string;
 }
 
-export interface Clouds {
+interface Clouds {
   all: number;
 }
 
-export interface Wind {
+interface Wind {
   speed: number;
   deg: number;
   gust: number;
 }
 
-export interface Sys {
+interface Sys {
   pod: string;
 }
 
-export interface City {
+interface City {
   id: number;
   name: string;
   coord: Coord;
@@ -60,15 +71,4 @@ export interface City {
   timezone: number;
   sunrise: number;
   sunset: number;
-}
-
-export interface Coord {
-  lat: number;
-  lon: number;
-}
-
-export interface HourlyTemp {
-  tMax: number;
-  tMin: number;
-  iconURL: string;
 }

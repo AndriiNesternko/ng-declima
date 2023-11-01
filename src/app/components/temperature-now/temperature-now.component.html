@@ -1,4 +1,8 @@
-<form #cityNameForm="ngForm" (ngSubmit)="onSumbmit(cityNameForm)">
+<form
+  #cityNameForm="ngForm"
+  (ngSubmit)="onSumbmit(cityNameForm)"
+  [class.error-form]="isError"
+>
   <input type="text" placeholder="Your city" name="city" ngModel required />
   <button type="submit" class="submit-btn"></button>
 </form>
@@ -56,5 +60,5 @@
 </div>
 
 <ng-template #erroMessage>
-  <h1 class="find-city">Type your city</h1>
+  <h1 class="find-city">Enter your city</h1>
 </ng-template>

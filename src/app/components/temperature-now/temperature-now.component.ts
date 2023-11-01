@@ -38,7 +38,7 @@ export class TemperatureNowComponent implements OnInit {
 
   getWeatherData() {
     this.weatherService.getWeather(this.cityName).subscribe({
-      next: (res: IWeather) => {
+      next: (res) => {
         this.temperature = res.list[0].main.temp;
         this.maxTemperature = res.list[0].main.temp_max;
         this.minTemperature = res.list[0].main.temp_min;
@@ -50,29 +50,33 @@ export class TemperatureNowComponent implements OnInit {
           'https://openweathermap.org/img/wn/' +
           res.list[0].weather[0].icon +
           '@2x.png';
+
         this.coord = res.city.coord;
 
-        this.isError = false;
+        this.getFourDaysWeather(res);
 
-        for (let i = 1; i < 5; i++) {
-          let elem = {
-            tMax: res.list[i].main.temp_max,
-            tMin: res.list[i].main.temp_min,
-            iconURL:
-              'https://openweathermap.org/img/wn/' +
-              res.list[i].weather[0].icon +
-              '@2x.png',
-          };
-          this.hourlyTempList.push(elem);
-        }
+        this.isError = false;
       },
 
-      error: (err) => {
-        console.log(err);
+      error: () => {
         this.isError = true;
       },
       complete: () => console.info('API weather complete'),
     });
+  }
+
+  getFourDaysWeather(res: IWeather) {
+    for (let i = 1; i < 5; i++) {
+      let elem = {
+        tMax: res.list[i].main.temp_max,
+        tMin: res.list[i].main.temp_min,
+        iconURL:
+          'https://openweathermap.org/img/wn/' +
+          res.list[i].weather[0].icon +
+          '@2x.png',
+      };
+      this.hourlyTempList.push(elem);
+    }
   }
 
   onSumbmit(form: NgForm) {

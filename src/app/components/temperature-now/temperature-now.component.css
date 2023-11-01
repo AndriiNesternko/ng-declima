@@ -12,6 +12,10 @@ form {
   gap: 3px;
 }
 
+.error-form {
+  margin: 70px 0 30px 0;
+}
+
 input {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -51,7 +55,6 @@ input:autofill {
 
 .submit-btn:hover {
   background-color: var(--white-color);
-  transform: scale(1.05);
 }
 
 .temperature-now {

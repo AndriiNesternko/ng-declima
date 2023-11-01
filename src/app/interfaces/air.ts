@@ -8,17 +8,17 @@ export interface Coord {
   lat: number;
 }
 
-export interface List {
+interface List {
   main: Main;
   components: Components;
   dt: number;
 }
 
-export interface Main {
+interface Main {
   aqi: number;
 }
 
-export interface Components {
+interface Components {
   co: number;
   no: number;
   no2: number;
