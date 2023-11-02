@@ -1,11 +1,17 @@
-# DeClima
+## Recipe Book
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+Small and beautiful website for weather forecast and air pollution
 
-## Development server
+PRESS THE BUTTON
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[![website](https://img.shields.io/badge/DeClima-website-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ng-declima.firebaseapp.com)
 
+## Stack
+
+- Angular 16
+- HTML/CSS
+- TypeScript
+- Weather API( 5 Day / 3 Hour Forecast, Air Pollution API)
 
 
 
