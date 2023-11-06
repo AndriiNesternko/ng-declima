@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="air; else erroMessage">
   <div class="index-container">
     <div class="title-wrapper">
       <img src="../../../assets/leaf.svg" />
@@ -61,3 +61,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #erroMessage>
+  <h2>Cant get acess</h2>
+</ng-template>

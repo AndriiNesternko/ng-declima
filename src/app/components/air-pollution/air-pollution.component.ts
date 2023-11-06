@@ -8,5 +8,5 @@ import { IAir } from 'src/app/interfaces/air';
   styleUrls: ['./air-pollution.component.css'],
 })
 export class AirPollutionComponent {
-  @Input() air!: IAir;
+  @Input() air: IAir | undefined;
 }
