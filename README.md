@@ -1,6 +1,6 @@
 ## Recipe Book
 
-Small and beautiful website for weather forecast and air pollution
+Small and beautiful responsive website for weather forecast and air pollution
 
 PRESS THE BUTTON
 
